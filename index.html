@@ -25,13 +25,13 @@
   --ink: #0F1419;
   --ink-soft: #444A55;
   --ink-light: #6B7280;
-  --accent: #1E40AF;
-  --accent-soft: #2563EB;
-  --accent-bright: #3B82F6;
-  --accent-2: #4338CA;
-  --accent-3: #6D28D9;
-  --accent-bg: rgba(30, 64, 175, 0.06);
-  --accent-glow: rgba(30, 64, 175, 0.15);
+  --accent: #001A99;
+  --accent-soft: #1E3DB8;
+  --accent-bright: #3B5FD9;
+  --accent-2: #1E3DB8;
+  --accent-3: #4F46B8;
+  --accent-bg: rgba(0, 26, 153, 0.06);
+  --accent-glow: rgba(0, 26, 153, 0.18);
   --gold: #B45309;
   --rule: #E5E7EB;
   --rule-soft: #F0F1F4;
@@ -62,8 +62,8 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(30, 64, 175, 0.025) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 50% at 80% 0%, rgba(67, 56, 202, 0.02) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(0, 26, 153, 0.025) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 0%, rgba(30, 61, 184, 0.02) 0%, transparent 50%);
   z-index: 0;
 }
 
@@ -101,14 +101,14 @@ a:hover { color: var(--accent-bright); }
 nav {
   position: sticky;
   top: 0;
-  background: #0F1419;
-  border-bottom: 1px solid #0F1419;
+  background: #001A99;
+  border-bottom: 1px solid #001A99;
   z-index: 50;
   transition: box-shadow 0.3s ease;
 }
 
 nav.scrolled {
-  box-shadow: 0 2px 12px rgba(15, 20, 25, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 26, 153, 0.25);
 }
 
 .nav-inner {
@@ -176,12 +176,12 @@ nav.scrolled {
     top: 100%;
     left: 0;
     right: 0;
-    background: #0F1419;
+    background: #001A99;
     flex-direction: column;
     padding: 16px 20px;
     gap: 16px;
     border-bottom: 1px solid var(--rule);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 26, 153, 0.2);
   }
   .nav-links.open { display: flex; }
   .nav-toggle { display: block; }
@@ -247,7 +247,7 @@ section { padding: 70px 0; position: relative; }
 
 .hero-photo-wrap:hover .hero-photo {
   transform: scale(1.02);
-  box-shadow: 0 12px 32px rgba(30, 64, 175, 0.18);
+  box-shadow: 0 12px 32px rgba(0, 26, 153, 0.18);
 }
 
 .hero-name-block { text-align: center; }
@@ -411,7 +411,7 @@ section { padding: 70px 0; position: relative; }
   color: var(--accent);
   border-radius: 100px;
   letter-spacing: 0.02em;
-  border: 1px solid rgba(30, 64, 175, 0.15);
+  border: 1px solid rgba(0, 26, 153, 0.15);
   transition: all 0.25s ease;
 }
 
@@ -463,7 +463,7 @@ section { padding: 70px 0; position: relative; }
 
 .project-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(30, 64, 175, 0.3);
+  border-color: rgba(0, 26, 153, 0.3);
   box-shadow: 0 12px 32px rgba(15, 20, 25, 0.08);
 }
 
@@ -526,13 +526,13 @@ section { padding: 70px 0; position: relative; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 14px;
-  border: 1px solid rgba(30, 64, 175, 0.15);
+  border: 1px solid rgba(0, 26, 153, 0.15);
 }
 
 .project-tag.dash {
-  background: rgba(67, 56, 202, 0.06);
+  background: rgba(30, 61, 184, 0.06);
   color: var(--accent-2);
-  border-color: rgba(67, 56, 202, 0.15);
+  border-color: rgba(30, 61, 184, 0.15);
 }
 
 .project-name {
@@ -605,7 +605,7 @@ section { padding: 70px 0; position: relative; }
   padding: 7px 14px;
   background: var(--accent-bg);
   border-radius: 100px;
-  border: 1px solid rgba(30, 64, 175, 0.15);
+  border: 1px solid rgba(0, 26, 153, 0.15);
   transition: all 0.25s ease;
 }
 
@@ -676,7 +676,7 @@ section { padding: 70px 0; position: relative; }
   text-transform: uppercase;
   margin-right: 8px;
   vertical-align: middle;
-  border: 1px solid rgba(30, 64, 175, 0.15);
+  border: 1px solid rgba(0, 26, 153, 0.15);
 }
 
 @media (max-width: 640px) {
@@ -711,7 +711,7 @@ section { padding: 70px 0; position: relative; }
   padding: 4px 12px;
   background: var(--accent-bg);
   border-radius: 100px;
-  border: 1px solid rgba(30, 64, 175, 0.15);
+  border: 1px solid rgba(0, 26, 153, 0.15);
 }
 
 .pub-list { list-style: none; }
@@ -784,7 +784,7 @@ section { padding: 70px 0; position: relative; }
   padding: 4px 11px;
   background: var(--accent-bg);
   border-radius: 100px;
-  border: 1px solid rgba(30, 64, 175, 0.15);
+  border: 1px solid rgba(0, 26, 153, 0.15);
   transition: all 0.25s ease;
 }
 
@@ -985,7 +985,7 @@ section { padding: 70px 0; position: relative; }
   padding: 4px 10px;
   background: var(--accent-bg);
   border-radius: 100px;
-  border: 1px solid rgba(30, 64, 175, 0.15);
+  border: 1px solid rgba(0, 26, 153, 0.15);
   text-align: center;
   min-width: 90px;
 }
