@@ -296,6 +296,40 @@ section { padding: 70px 0; position: relative; }
 
 .hero-affiliation a { color: var(--accent); font-weight: 500; }
 
+.hero-profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.hero-profiles a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 5px 11px;
+  background: rgba(196, 181, 253, 0.06);
+  color: var(--accent-2);
+  border: 1px solid rgba(196, 181, 253, 0.2);
+  border-radius: 100px;
+  transition: all 0.25s ease;
+}
+
+.hero-profiles a:hover {
+  background: rgba(196, 181, 253, 0.15);
+  border-color: var(--accent-2);
+  color: var(--accent-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(196, 181, 253, 0.2);
+}
+
+.hero-profiles a svg { width: 12px; height: 12px; flex-shrink: 0; }
+
 .hero-email {
   color: var(--ink-light);
   font-family: var(--mono);
@@ -416,6 +450,217 @@ section { padding: 70px 0; position: relative; }
 .tag:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(125, 211, 252, 0.2);
+}
+
+/* ============ FEATURED PROJECTS ============ */
+#projects {
+  background: linear-gradient(180deg, transparent 0%, rgba(196, 181, 253, 0.04) 50%, transparent 100%);
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+#projects::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  animation: float-orb 30s ease-in-out infinite;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  padding: 32px;
+  margin-bottom: 28px;
+  background: linear-gradient(160deg, var(--bg-card) 0%, var(--bg-deep) 100%);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 50%, var(--accent-3) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(125, 211, 252, 0.4);
+  box-shadow: 0 24px 60px rgba(125, 211, 252, 0.15), 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project-card:hover::before { opacity: 1; }
+
+.project-card.reverse {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.project-card.reverse .project-image {
+  order: 2;
+}
+
+@media (max-width: 800px) {
+  .project-card,
+  .project-card.reverse {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+  .project-card.reverse .project-image {
+    order: 0;
+  }
+}
+
+.project-image {
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-deep);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.02);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.project-info { min-width: 0; }
+
+.project-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: 100px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+}
+
+.project-tag.dash {
+  background: rgba(196, 181, 253, 0.1);
+  color: var(--accent-2);
+  border-color: rgba(196, 181, 253, 0.25);
+}
+
+.project-name {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-name.dash {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--accent-2);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.project-abstract {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+
+.project-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.stat {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: rgba(125, 211, 252, 0.05);
+  color: var(--ink-soft);
+  border-radius: 100px;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--rule);
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: var(--accent-bg);
+  border-radius: 100px;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  transition: all 0.25s ease;
+}
+
+.project-links a:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--accent-glow);
+}
+
+.project-links a svg {
+  width: 13px;
+  height: 13px;
 }
 
 /* ============ NEWS ============ */
@@ -959,6 +1204,7 @@ footer {
     </button>
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -984,6 +1230,16 @@ footer {
           <div class="hero-title">Ph.D. Student (4th Year)<br>Graduate Research Assistant</div>
           <div class="hero-affiliation">
             <a href="https://www.ece.ufl.edu/" target="_blank" rel="noopener">ECE @ University of Florida</a>
+          </div>
+          <div class="hero-profiles">
+            <a href="https://faculty.eng.ufl.edu/swarup/people/" target="_blank" rel="noopener" title="Bhunia Lab Profile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
+              Bhunia Lab
+            </a>
+            <a href="https://iot.institute.ufl.edu/iot-students-club/officers/habibur-rahaman/" target="_blank" rel="noopener" title="UF IoT Institute Profile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              IoT Institute
+            </a>
           </div>
           <div class="hero-email">rahaman.habibur[at]ufl[dot]edu</div>
           <div class="hero-socials">
@@ -1035,6 +1291,76 @@ footer {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS ============ -->
+<section id="projects" class="reveal">
+  <div class="container">
+    <h2 class="section-heading">Featured <em>projects</em></h2>
+
+    <!-- SAMURAI -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="images/SAMURAI.png" alt="SAMURAI Framework architecture diagram showing APC Block, AI accelerator pipeline, and TANTO ML engine">
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Runtime Attack Detection</span>
+        <h3 class="project-name">SAMURAI</h3>
+        <p class="project-subtitle">Safeguarding Against Malicious Usage and Resilience of AI</p>
+        <p class="project-abstract">
+          AI accelerators are increasingly vulnerable to adversarial evasion attacks, where small, imperceptible perturbations to input data lead to incorrect model predictions. SAMURAI is a framework for runtime attack detection in AI accelerators, featuring an array of <strong>AI Performance Counters (APCs)</strong> that monitor the dynamic behavior of AI models — much like Hardware Performance Counters track activity in modern microprocessors. A lightweight on-chip ML engine called <strong>TANTO</strong> (Trained Anomaly Inspection through Trace Observation) concurrently analyzes APC traces to detect threats during inference. Evaluated on image and audio inputs (including 2D Mel-spectrograms) across multiple CNN architectures.
+        </p>
+        <div class="project-stats">
+          <span class="stat">98% detection accuracy</span>
+          <span class="stat">&lt; 3% energy overhead</span>
+          <span class="stat">&lt; 4% area overhead</span>
+          <span class="stat">&lt; 10% latency</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/habiburiit/SAMURAI_Defense" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://ieeexplore.ieee.org/abstract/document/11471824" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            IEEE Paper
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DASH -->
+    <article class="project-card reverse">
+      <div class="project-image">
+        <img src="images/DASH.png" alt="DASH adversarial example comparison showing Original, Diffattack, AdvAD, and DASH (ours) results on iguana and cathedral images">
+      </div>
+      <div class="project-info">
+        <span class="project-tag dash">Adversarial ML · CVPR 2026</span>
+        <h3 class="project-name dash">DASH</h3>
+        <p class="project-subtitle">A Differentiable Meta-Attack Framework for Perceptually-Aligned Adversarial Examples</p>
+        <p class="project-abstract">
+          Norm-bounded adversarial examples (ℓp-constrained) often fail to align with human perception. DASH is a <strong>differentiable meta-attack framework</strong> that strategically composes existing ℓp-based attacks to generate effective and perceptually-aligned adversarial examples. Operating in a multi-stage fashion, DASH aggregates candidates from multiple base attacks using <strong>learned, adaptive weights</strong> and propagates the result forward. A novel meta-loss jointly minimizes misclassification loss and perceptual distortion, dynamically modulating each base attack's contribution. Evaluated on adversarially trained robust models across CIFAR-10/100 and ImageNet.
+        </p>
+        <div class="project-stats">
+          <span class="stat">+20.63% ASR vs AdvAD</span>
+          <span class="stat">SSIM +11</span>
+          <span class="stat">LPIPS +0.015</span>
+          <span class="stat">FID +5.7</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/habiburiit/AI_ATTCK" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://arxiv.org/pdf/2508.13309" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            arXiv
+          </a>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -1260,7 +1586,7 @@ footer {
     </div>
 
     <div class="pub-group">
-      <h3 class="pub-group-title">Earlier Work <span class="pub-count">M.S. — IIT Kharagpur</span></h3>
+      <h3 class="pub-group-title">Earlier Work <span class="pub-count">Masters — IIT Kharagpur</span></h3>
       <ul class="pub-list">
 
         <li class="pub">
@@ -1563,6 +1889,14 @@ footer {
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Gainesville, FL · USA</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
+          <a href="https://faculty.eng.ufl.edu/swarup/people/" target="_blank" rel="noopener">Bhunia Lab — UF Faculty Page</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="https://iot.institute.ufl.edu/iot-students-club/officers/habibur-rahaman/" target="_blank" rel="noopener">UF IoT Institute Profile</a>
         </li>
       </ul>
     </div>
