@@ -512,6 +512,25 @@ section { padding: 70px 0; position: relative; }
   border-radius: 4px;
 }
 
+.project-image.stack {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-image.stack figure {
+  width: 100%;
+  margin: 0;
+}
+
+.project-image.stack figcaption {
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--ink-light);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
 .project-info { min-width: 0; }
 
 .project-tag {
@@ -1208,7 +1227,7 @@ footer {
           He previously worked as a DFT Intern at <strong>Intel Corporation, Bangalore, India</strong>, from July 2021 to December 2022, and as an intern in SoC-based Security at <strong>Intel Corporation, Santa Clara, CA, USA</strong>, from August 2023 to December 2023.
         </p>
         <p>
-          His work has appeared in leading conferences and journals, including <em>IEEE/CVF CVPR</em>, <em>ACM/IEEE DAC</em>, <em>IEEE ATS</em>, <em>IEEE ISQED</em>, <em>IEEE ISVLSI</em>, <em>SN Computer Science</em>, <em>IEEE TCASAI</em>, and <em>IEEE TVLSI</em>. He was a <strong>Best Paper Award nominee</strong> at ATS for the paper "SAMURAI: Runtime Detection of Adversarial Attacks in AI Accelerators Using Performance Counters" and received the <strong>Best Demo Award</strong> for Innovative Project Demo from UF Innovate at the Warren B. Nelms Annual IoT Conference 2025 for demonstrating the SAMURAI tool.
+          His work has appeared in leading conferences and journals, including <em>ACM CCS</em>, <em>IEEE/CVF CVPR</em>, <em>ACM/IEEE DAC</em>, <em>IEEE ATS</em>, <em>IEEE ISQED</em>, <em>IEEE ISVLSI</em>, <em>SN Computer Science</em>, <em>IEEE TCASAI</em>, and <em>IEEE TVLSI</em>. He was a <strong>Best Paper Award nominee</strong> at ATS for the paper "SAMURAI: Runtime Detection of Adversarial Attacks in AI Accelerators Using Performance Counters" and received the <strong>Best Demo Award</strong> for Innovative Project Demo from UF Innovate at the Warren B. Nelms Annual IoT Conference 2025 for demonstrating the SAMURAI tool.
         </p>
         <p>
           His research interests include <strong>machine learning security</strong>, <strong>AI hardware</strong>, <strong>adversarial machine learning</strong>, <strong>hardware security</strong>, and <strong>VLSI testing</strong>.
@@ -1224,6 +1243,7 @@ footer {
             <span class="tag">VLSI Testing</span>
             <span class="tag">Bit-Flip Attacks</span>
             <span class="tag">Backdoor Defenses</span>
+            <span class="tag">ML Supply Chain Security</span>
           </div>
         </div>
       </div>
@@ -1236,8 +1256,42 @@ footer {
   <div class="container">
     <h2 class="section-heading">Featured <em>projects</em></h2>
 
-    <!-- SAMURAI -->
+    <!-- (A)iSpy -->
     <article class="project-card">
+      <div class="project-image stack">
+        <figure>
+          <img src="images/AISPY.png" alt="(A)iSpy threat model: the trojan registers as a standard extension in the ML infrastructure stack and runs an observe-and-execute flow over tensor state">
+          <figcaption>(A)iSpy registers as a standard graph-optimizer extension and drives an observe-and-execute flow over live tensor state.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/AISPY_GRAPH.png" alt="Computation graph showing the victim inference path alongside hidden interceptor branches that survive operator fusion">
+          <figcaption>Interceptor branches persist through runtime graph rewriting and operator fusion in ONNX Runtime and TensorRT.</figcaption>
+        </figure>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">ML Infrastructure Trojans · CCS 2026</span>
+        <h3 class="project-name">(A)iSpy</h3>
+        <p class="project-subtitle">Parasitic Trojans for Machine Learning Infrastructure</p>
+        <p class="project-abstract">
+          ML pipelines audit data and model artifacts, but the execution environment underneath them is trusted implicitly. (A)iSpy exploits that blind spot: a <strong>parasitic infrastructure trojan</strong> that registers as an ordinary runtime extension and subverts training and inference through an <strong>active observe-and-execute paradigm</strong>. Living inside the computation graph, it watches transient tensor state and performs targeted manipulations at negligible overhead. Against confidentiality, it recovers the critical training hyperparameters and covertly exfiltrates them through model weights or output logits. Against integrity, it acts as a <strong>gradient amplifier</strong>, converting otherwise ineffective data poisoning into a working backdoor once a steganographic trigger appears. Subpopulation label flipping, availability disruption, and inference-stage manipulation are demonstrated as further attacks. Evaluated malware scanners do not flag it, since public rule sets have no coverage for ML runtime trojans, and the poisoned inputs and compromised models slip past state-of-the-art inspection tools. Implemented in the ONNX Runtime training and inference engines.
+        </p>
+        <div class="project-stats">
+          <span class="stat">Backdoor ASR ~0% → 100%</span>
+          <span class="stat">Hyperparameter exfiltration</span>
+          <span class="stat">Undetected by malware scanners</span>
+          <span class="stat">ONNX Runtime + TensorRT</span>
+        </div>
+        <div class="project-links">
+          <a href="https://arxiv.org/pdf/2607.17550" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            arXiv
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SAMURAI -->
+    <article class="project-card reverse">
       <div class="project-image">
         <img src="images/SAMURAI.png" alt="SAMURAI Framework architecture diagram showing APC Block, AI accelerator pipeline, and TANTO ML engine">
       </div>
@@ -1268,7 +1322,7 @@ footer {
     </article>
 
     <!-- DASH -->
-    <article class="project-card reverse">
+    <article class="project-card">
       <div class="project-image">
         <img src="images/DASH.png" alt="DASH adversarial example comparison showing Original, Diffattack, AdvAD, and DASH (ours) results on iguana and cathedral images">
       </div>
@@ -1306,6 +1360,10 @@ footer {
   <div class="container">
     <h2 class="section-heading">Latest <em>news</em></h2>
     <ul class="news-list">
+      <li class="news-item">
+        <div class="news-date">Aug 2026</div>
+        <div class="news-content"><span class="news-tag">Paper</span> <strong>(A)iSpy: Parasitic Trojans for Machine Learning Infrastructure</strong> accepted at <strong>ACM CCS 2026</strong>.</div>
+      </li>
       <li class="news-item">
         <div class="news-date">May 2026</div>
         <div class="news-content"><span class="news-tag">Paper</span> Two papers accepted at <strong>CVPR 2026</strong> — DASH (meta-attack framework) and ENTROMIX (medical image augmentation).</div>
@@ -1354,6 +1412,18 @@ footer {
     <div class="pub-group">
       <h3 class="pub-group-title">Conference Papers <span class="pub-count">Selected</span></h3>
       <ul class="pub-list">
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">(A)iSpy: Parasitic Trojans for Machine Learning Infrastructure</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, Q. Xu, F. Suya, S. Bhunia</div>
+            <div class="pub-venue">ACM Conference on Computer and Communications Security (CCS)</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2607.17550" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </li>
 
         <li class="pub">
           <div class="pub-year">2026</div>
@@ -1847,7 +1917,7 @@ footer {
 <footer>
   <div class="footer-inner">
     <span>© 2026 Habibur Rahaman</span>
-    <span>Last updated: May 2026</span>
+    <span>Last updated: September 2026</span>
   </div>
 </footer>
 
