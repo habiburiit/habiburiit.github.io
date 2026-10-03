@@ -1352,6 +1352,33 @@ footer {
       </div>
     </article>
 
+    <!-- WINGS -->
+    <article class="project-card reverse">
+      <div class="project-image">
+        <img src="images/WINGS.png" alt="WINGS framework: sensitivity-aware PCA and SVR weight generation, compact storage, inference-time reconstruction, and tamper evidence under bit-flip attack">
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Model Compression · IEEE TCOMP</span>
+        <h3 class="project-name">WINGS</h3>
+        <p class="project-subtitle">Automatic Weight Generator for Storage-Efficient Deep Learning Models</p>
+        <p class="project-abstract">
+          Storing millions of synaptic weights is the main barrier to running large models on edge hardware. WINGS removes that cost by generating weights at inference time instead of storing them. A gradient-based sensitivity analysis ranks layers; low-sensitivity layers are compressed with <strong>PCA</strong>, and lightweight <strong>support vector regression</strong> models predict each layer's reduced components from the previous layer, so only PCA bases, the first compressed layer, the SVR predictors, and the untouched high-sensitivity weights are kept. Nothing is retrained. The same structure yields tamper evidence for free: a bit-flip in a stored coefficient perturbs an entire weight row along a dominant principal direction, so the accuracy drop is amplified and the attack becomes observable at a fraction of the redundancy cost of ECC. Validated on CNNs and on transformer NLP models, with FPGA and 28nm ASIC measurements.
+        </p>
+        <div class="project-stats">
+          <span class="stat">53x compression, FC layers</span>
+          <span class="stat">14x AlexNet · 11x ResNet-50</span>
+          <span class="stat">&lt; 1% accuracy loss</span>
+          <span class="stat">No retraining</span>
+        </div>
+        <div class="project-links">
+          <a href="https://arxiv.org/pdf/2507.06380" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            arXiv
+          </a>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -1360,6 +1387,10 @@ footer {
   <div class="container">
     <h2 class="section-heading">Latest <em>news</em></h2>
     <ul class="news-list">
+      <li class="news-item">
+        <div class="news-date">Oct 2026</div>
+        <div class="news-content"><span class="news-tag">Journal</span> <strong>WINGS</strong> accepted with no further changes in <strong>IEEE Transactions on Computers</strong>.</div>
+      </li>
       <li class="news-item">
         <div class="news-date">Aug 2026</div>
         <div class="news-content"><span class="news-tag">Paper</span> <strong>(A)iSpy: Parasitic Trojans for Machine Learning Infrastructure</strong> accepted at <strong>ACM CCS 2026</strong>.</div>
@@ -1519,6 +1550,18 @@ footer {
         <li class="pub">
           <div class="pub-year">2026</div>
           <div class="pub-content">
+            <div class="pub-title">WINGS: Automatic Weight Generator for Storage-Efficient Deep Learning Models <span class="pub-tag review">Accepted</span></div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, A. Chatterjee, S. Bhunia</div>
+            <div class="pub-venue">IEEE Transactions on Computers</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2507.06380" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
             <div class="pub-title">SAMURAI: Runtime Attack Detection in AI Accelerators Using AI Performance Counters</div>
             <div class="pub-authors"><strong>H. Rahaman</strong>, A. Chatterjee, S. Bhunia</div>
             <div class="pub-venue">IEEE Transactions on Circuits and Systems for Artificial Intelligence</div>
@@ -1567,18 +1610,6 @@ footer {
     <div class="pub-group">
       <h3 class="pub-group-title">Journal Articles <span class="pub-count">Under Review</span></h3>
       <ul class="pub-list">
-
-        <li class="pub">
-          <div class="pub-year">2025</div>
-          <div class="pub-content">
-            <div class="pub-title">WINGS: Automatic Weight Generator for Secure and Storage-Efficient Deep Learning Models <span class="pub-tag review">Major Revision</span></div>
-            <div class="pub-authors"><strong>H. Rahaman</strong>, A. Chatterjee, S. Bhunia</div>
-            <div class="pub-venue">IEEE Transactions on Computers</div>
-            <div class="pub-links">
-              <a href="https://arxiv.org/pdf/2507.06380" target="_blank" rel="noopener">arXiv</a>
-            </div>
-          </div>
-        </li>
 
         <li class="pub">
           <div class="pub-year">2025</div>
@@ -1917,7 +1948,7 @@ footer {
 <footer>
   <div class="footer-inner">
     <span>© 2026 Habibur Rahaman</span>
-    <span>Last updated: September 2026</span>
+    <span>Last updated: October 2026</span>
   </div>
 </footer>
 
