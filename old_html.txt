@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habibur Rahaman - University of Florida</title>
+<meta name="description" content="Habibur Rahaman, Ph.D. student in ECE at the University of Florida, researching ML security, adversarial ML, AI hardware and VLSI testing.">
+<meta name="author" content="Habibur Rahaman">
+
+<meta property="og:title" content="Habibur Rahaman - University of Florida">
+<meta property="og:description" content="Ph.D. student, University of Florida. Research in ML security, adversarial ML, and AI hardware.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://habiburiit.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+<style>
+:root{--ink:#0a1830;--muted:#5f6b7a;--line:#dfe5ec;--paper:#f5f7fa;--white:#fff;--blue:#0b2b6b;--blue2:#124aa2;--orange:#f36f21;--soft:#edf3fb;--serif:'Instrument Serif',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}main{overflow:hidden}.container{width:min(1180px,calc(100% - 40px));margin:auto}section{padding:90px 0;scroll-margin-top:90px}.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--orange);z-index:200;width:0}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(10,24,48,.08)}.nav-inner{width:min(1240px,calc(100% - 40px));margin:auto;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px}.nav-brand{font-weight:800;letter-spacing:-.02em;font-size:18px;color:var(--ink)}.nav-brand:after{content:' / researcher';font-weight:500;color:#8894a4}.nav-links{display:flex;gap:22px;list-style:none;align-items:center}.nav-links a{font-size:13px;font-weight:700;color:#617083;transition:.2s}.nav-links a:hover,.nav-links a.active{color:var(--blue2)}.nav-toggle{display:none;border:0;background:none;color:var(--ink)}
+#home{padding:0;background:linear-gradient(135deg,#07152c 0%,#0c2b61 58%,#123b7d 100%);color:#fff;position:relative}#home:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.12),transparent 28%),linear-gradient(90deg,transparent 0 74%,rgba(255,255,255,.035) 74% 100%);pointer-events:none}.hero-shell{position:relative;z-index:1;width:min(1240px,calc(100% - 40px));margin:auto;display:grid;grid-template-columns:1.35fr .65fr;gap:70px;align-items:center;min-height:680px;padding:72px 0}.hero-kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#bcd2ff;margin-bottom:24px}.hero-kicker:before{content:'';width:34px;height:2px;background:var(--orange)}.hero-copy h1{font-family:var(--serif);font-size:clamp(64px,8vw,112px);line-height:.88;letter-spacing:-.045em;font-weight:400;margin-bottom:26px}.hero-copy h1 span{display:block;color:#b9cdf8;font-style:italic}.hero-lead{max-width:760px;font-size:20px;line-height:1.62;color:#d9e4f8;margin-bottom:28px}.hero-lead strong{color:#fff}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;font-size:13px;font-weight:800;transition:.2s}.btn.primary{background:#fff;color:var(--blue)}.btn.primary:hover{transform:translateY(-2px)}.btn.ghost{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.05)}.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:38px}.hero-meta div{border-top:1px solid rgba(255,255,255,.2);padding-top:14px}.hero-meta b{display:block;font-family:var(--serif);font-size:24px;font-weight:400}.hero-meta span{font-size:11px;color:#b9c7df;text-transform:uppercase;letter-spacing:.08em}.profile-card{background:#fff;color:var(--ink);border-radius:26px;padding:18px;box-shadow:0 28px 70px rgba(0,0,0,.24);transform:rotate(1deg)}.profile-card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:#e9edf3}.profile-body{padding:20px 8px 8px}.profile-body h2{font-family:var(--serif);font-size:34px;font-weight:400;line-height:1}.profile-role{font-size:13px;font-weight:700;color:#4f5d70;margin:9px 0 14px}.profile-affil{font-size:13px;color:var(--blue2);font-weight:700}.profile-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.profile-links a{font-size:11px;font-weight:800;border:1px solid var(--line);padding:7px 10px;border-radius:8px;color:#47566a}.profile-links a:hover{border-color:var(--blue2);color:var(--blue2)}
+.about-panel{background:#fff;padding:34px;border-radius:20px;border:1px solid #e2e7ee;margin-top:-48px;position:relative;z-index:3;box-shadow:0 18px 40px rgba(20,36,60,.08)}.about-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:45px}.about-title small,.section-eyebrow{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);font-weight:700}.about-title h2,.section-heading{font-family:var(--serif);font-weight:400;letter-spacing:-.03em}.about-title h2{font-size:46px;line-height:1;margin-top:9px}.about-copy p{color:#536173;margin-bottom:14px;font-size:15px}.about-copy strong{color:var(--ink)}.research-interests{margin-top:24px}.research-interests-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}.tag-list{display:flex;flex-wrap:wrap;gap:8px}.tag{background:#eef3f9;border:1px solid #dde5ef;color:#173b73;border-radius:8px;padding:7px 10px;font-size:11px;font-weight:700}
+.section-heading{font-size:clamp(48px,5vw,70px);line-height:.95;margin-bottom:42px}.section-heading em{color:var(--blue2);font-weight:400}.section-heading:before{content:'Selected work';display:block;font-family:var(--mono);font-style:normal;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--orange);margin-bottom:12px}.reveal{opacity:0;transform:translateY(20px);transition:.55s ease}.reveal.visible{opacity:1;transform:none}
+#projects{background:#fff}.project-card{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:30px;background:#fff;box-shadow:0 10px 30px rgba(15,30,50,.04)}.project-card.reverse{grid-template-columns:.95fr 1.05fr}.project-card.reverse .project-image{order:2}.project-image{background:#0d1d36;padding:28px;display:flex;align-items:center;justify-content:center;min-height:360px}.project-image img{border-radius:10px;box-shadow:0 14px 30px rgba(0,0,0,.22)}.project-image.stack{display:grid;gap:16px}.project-image.stack figcaption{font-size:10px;color:#b6c6df;margin-top:7px}.project-info{padding:42px}.project-tag{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--orange)}.project-name{font-family:var(--serif);font-size:50px;font-weight:400;line-height:1;margin:10px 0 4px}.project-subtitle{font-size:15px;color:var(--blue2);font-weight:700;margin-bottom:18px}.project-abstract{font-size:14px;color:#5a6777}.project-stats{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.stat{font-size:10px;font-weight:800;color:#32445c;background:#f0f4f8;padding:7px 9px;border-radius:7px}.project-links{display:flex;gap:10px;flex-wrap:wrap}.project-links a,.pub-links a{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--blue2);border-bottom:1px solid #bdd0ef;padding-bottom:2px}
+#news{background:#eef3f8}.news-list{list-style:none}.news-item{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:19px 0;border-bottom:1px solid #d9e1ea}.news-date{font-family:var(--mono);font-size:11px;color:var(--orange);font-weight:800}.news-content{font-size:15px}.news-tag{font-size:9px;font-weight:800;text-transform:uppercase;color:var(--blue2);margin-right:7px}
+#publications{background:#fff}.pub-group{margin-bottom:48px}.pub-group-title{font-family:var(--serif);font-size:30px;font-weight:400;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:4px;display:flex;justify-content:space-between}.pub-count{font-family:var(--mono);font-size:10px;text-transform:uppercase;color:var(--orange);font-style:normal}.pub-list{list-style:none}.pub{display:grid;grid-template-columns:72px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid #e6eaf0}.pub-year{font-family:var(--mono);font-size:12px;font-weight:800;color:var(--blue2)}.pub-title{font-weight:800;font-size:15px;line-height:1.45}.pub-authors{font-size:13px;color:#657181;margin-top:5px}.pub-venue{font-family:var(--serif);font-style:italic;color:var(--blue2);font-size:15px;margin-top:4px}.pub-links{display:flex;gap:10px;margin-top:8px}.pub-tag{font-family:var(--mono);font-size:8px;text-transform:uppercase;background:#18253a;color:#fff;border-radius:4px;padding:3px 6px;margin-left:7px}.pub-tag.honor{background:#a55200}
+#experience{background:#0b1730;color:#fff}.timeline-grid,.two-col{display:grid;grid-template-columns:1fr 1fr;gap:46px}.timeline-col h3,.subsection-title{font-family:var(--serif);font-size:30px;font-weight:400;margin-bottom:16px}.timeline-item{display:grid;grid-template-columns:50px 1fr;gap:15px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12)}.timeline-item.no-logo{grid-template-columns:1fr}.timeline-logo{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:5px}.timeline-date{font-family:var(--mono);font-size:10px;color:#9fc2ff}.timeline-role{font-weight:800;font-size:14px}.timeline-place{font-family:var(--serif);font-style:italic;color:#b9cef4}.timeline-detail{font-size:12px;color:#b6c0d0}.list-item{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}.list-marker{font-family:var(--mono);font-size:10px;color:var(--blue2);font-weight:700}.list-text{font-size:14px}.list-text .sub,.list-text .sub-italic{display:block;color:#687587;font-size:12px;margin-top:4px}.list-text .sub-italic{font-family:var(--serif);font-style:italic;font-size:14px}
+#teaching,#service{background:#fff}#service{padding-top:10px}.subsection-title{color:var(--ink)}
+#contact{background:#ef6d22;color:#fff}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}.contact-text .section-heading{color:#fff}.contact-text .section-heading em{color:#fff}.contact-text p{max-width:560px;font-size:16px}.contact-list{list-style:none;display:grid;gap:10px}.contact-list li{display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.3);font-size:13px}.contact-list svg{width:16px;height:16px;flex:0 0 auto}
+footer{background:#07152c;color:#9fb0c8;padding:26px 0}.footer-inner{width:min(1180px,calc(100% - 40px));margin:auto;display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px}
+@media(max-width:900px){.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:18px 20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-toggle{display:block}.hero-shell{grid-template-columns:1fr;gap:34px;min-height:auto;padding:56px 0 90px}.profile-card{max-width:420px;transform:none}.about-grid,.project-card,.project-card.reverse,.timeline-grid,.two-col,.contact-grid{grid-template-columns:1fr}.project-card.reverse .project-image{order:0}.hero-meta{grid-template-columns:1fr 1fr 1fr}.about-panel{margin-top:-35px}.project-image{min-height:auto}}@media(max-width:640px){.container,.hero-shell,.nav-inner,.footer-inner{width:min(100% - 28px,1180px)}section{padding:64px 0}.hero-copy h1{font-size:58px}.hero-lead{font-size:17px}.hero-meta{grid-template-columns:1fr}.about-panel{padding:24px}.about-grid{gap:24px}.project-info{padding:26px}.project-name{font-size:40px}.news-item,.pub{grid-template-columns:1fr;gap:6px}.footer-inner{flex-direction:column;gap:6px}}
+</style>
+
+<style>
+#news .section-heading:before{content:'Updates'}#publications .section-heading:before{content:'Research record'}#experience .section-heading:before{content:'Background'}#teaching .section-heading:before{content:'Mentoring & instruction'}#service .section-heading:before{content:'Academic community'}#contact .section-heading:before{content:'Get in touch'}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">Habibur Rahaman</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============ HOME / BIOGRAPHY ============ -->
+<section id="home">
+  <div class="hero-shell">
+    <div class="hero-copy">
+      <div class="hero-kicker">Ph.D. Researcher · University of Florida</div>
+      <h1>Habibur <span>Rahaman</span></h1>
+      <p class="hero-lead">I work at the intersection of <strong>machine learning security</strong>, <strong>AI hardware</strong>, and <strong>hardware security</strong> - building attacks, defenses, and efficient ML systems from the runtime stack down to silicon.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">View selected research</a>
+        <a class="btn ghost" href="Habibur_Rahaman_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>UF ECE</b><span>Ph.D. Candidate</span></div>
+        <div><b>CCS · CVPR</b><span>Recent venues</span></div>
+        <div><b>ML + Hardware</b><span>Research focus</span></div>
+      </div>
+    </div>
+    <aside class="profile-card">
+      <img src="https://github.com/habiburiit.png" alt="Habibur Rahaman" onerror="this.style.display='none'">
+      <div class="profile-body">
+        <h2>Habibur Rahaman</h2>
+        <div class="profile-role">Ph.D. Student · Graduate Research Assistant</div>
+        <a class="profile-affil" href="https://www.ece.ufl.edu/" target="_blank" rel="noopener">Electrical &amp; Computer Engineering, University of Florida</a>
+        <div class="profile-links">
+          <a href="https://scholar.google.com/citations?user=jU1-z9UAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://github.com/habiburiit" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/habibur-rahaman-00a37117a/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:rahaman.habibur@ufl.edu">Email</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+<section class="about-wrap">
+  <div class="container">
+    <div class="about-panel">
+      <div class="about-grid">
+        <div class="about-title"><small>Research profile</small><h2>Security for intelligent systems.</h2></div>
+        <div class="about-copy">
+          <p><strong>Habibur Rahaman</strong> (Member, IEEE) is pursuing the Ph.D. degree in Electrical and Computer Engineering at the University of Florida under the guidance of <a href="https://www.ece.ufl.edu/people/faculty/swarup-bhunia/" target="_blank" rel="noopener"><strong>Prof. Swarup Bhunia</strong></a>. He received his Master's degree in Computer Science and Engineering from IIT Kharagpur.</p>
+          <p>His work spans machine learning security, adversarial ML, AI hardware, hardware security, and VLSI testing, with publications in venues including ACM CCS, IEEE/CVF CVPR, ACM/IEEE DAC, IEEE Transactions on Computers, and related conferences and journals.</p>
+          <p>He previously worked at Intel in DFT and SoC security roles, and his research has received a Best Paper Award nomination at ATS and a Best Demo Award at the Warren B. Nelms Annual IoT Conference 2025.</p>
+          <div class="research-interests"><div class="research-interests-label">Research themes</div><div class="tag-list">
+            <span class="tag">ML Security</span><span class="tag">AI Hardware</span><span class="tag">Adversarial ML</span><span class="tag">Hardware Security</span><span class="tag">VLSI Testing</span><span class="tag">Bit-Flip Attacks</span><span class="tag">Backdoor Defenses</span><span class="tag">ML Supply Chain Security</span>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS ============ -->
+<section id="projects" class="reveal">
+  <div class="container">
+    <h2 class="section-heading">Featured <em>projects</em></h2>
+
+    <!-- (A)iSpy -->
+    <article class="project-card">
+      <div class="project-image stack">
+        <figure>
+          <img src="images/AISPY.png" alt="(A)iSpy threat model: the Trojan registers as a standard extension in the ML infrastructure stack and runs an observe-and-execute flow over tensor state">
+          <figcaption>(A)iSpy registers as a standard graph-optimizer extension and drives an observe-and-execute flow over live tensor state.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/AISPY_GRAPH.png" alt="Computation graph showing the victim inference path alongside hidden interceptor branches that survive operator fusion">
+          <figcaption>Interceptor branches persist through runtime graph rewriting and operator fusion in ONNX Runtime and TensorRT.</figcaption>
+        </figure>
+      </div>
+      <div class="project-info">
+        <span class="project-tag">ML Infrastructure Trojans · CCS 2026</span>
+        <h3 class="project-name">(A)iSpy</h3>
+        <p class="project-subtitle">Parasitic Trojans for Machine Learning Infrastructure</p>
+        <p class="project-abstract">
+          ML pipelines audit data and model artifacts, but the execution environment underneath them is trusted implicitly. (A)iSpy exploits that blind spot: a <strong>parasitic infrastructure Trojan</strong> that registers as an ordinary runtime extension and subverts training and inference through an <strong>active observe-and-execute paradigm</strong>. Living inside the computation graph, it watches transient tensor state and performs targeted manipulations at negligible overhead. Against confidentiality, it recovers the critical training hyperparameters and covertly exfiltrates them through model weights or output logits. Against integrity, it acts as a <strong>gradient amplifier</strong>, converting otherwise ineffective data poisoning into a working backdoor once a steganographic trigger appears. Subpopulation label flipping, availability disruption, and inference-stage manipulation are demonstrated as further attacks. Evaluated malware scanners do not flag it, since public rule sets have no coverage for ML runtime Trojans, and the poisoned inputs and compromised models slip past state-of-the-art inspection tools. Implemented in the ONNX Runtime training and inference engines.
+        </p>
+        <div class="project-stats">
+          <span class="stat">Backdoor ASR ~0% → 100%</span>
+          <span class="stat">Hyperparameter exfiltration</span>
+          <span class="stat">Undetected by malware scanners</span>
+          <span class="stat">ONNX Runtime + TensorRT</span>
+        </div>
+        <div class="project-links">
+          <a href="https://arxiv.org/pdf/2607.17550" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            arXiv
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SAMURAI -->
+    <article class="project-card reverse">
+      <div class="project-image">
+        <img src="images/SAMURAI.png" alt="SAMURAI Framework architecture diagram showing APC Block, AI accelerator pipeline, and TANTO ML engine">
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Runtime Attack Detection</span>
+        <h3 class="project-name">SAMURAI</h3>
+        <p class="project-subtitle">Safeguarding Against Malicious Usage and Resilience of AI</p>
+        <p class="project-abstract">
+          AI accelerators are increasingly vulnerable to adversarial evasion attacks, where small, imperceptible perturbations to input data lead to incorrect model predictions. SAMURAI is a framework for runtime attack detection in AI accelerators, featuring an array of <strong>AI Performance Counters (APCs)</strong> that monitor the dynamic behavior of AI models - much like Hardware Performance Counters track activity in modern microprocessors. A lightweight on-chip ML engine called <strong>TANTO</strong> (Trained Anomaly Inspection through Trace Observation) concurrently analyzes APC traces to detect threats during inference. Evaluated on image and audio inputs (including 2D Mel-spectrograms) across multiple CNN architectures.
+        </p>
+        <div class="project-stats">
+          <span class="stat">98% detection accuracy</span>
+          <span class="stat">&lt; 3% energy overhead</span>
+          <span class="stat">&lt; 4% area overhead</span>
+          <span class="stat">&lt; 10% latency</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/habiburiit/SAMURAI_Defense" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://ieeexplore.ieee.org/abstract/document/11471824" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            IEEE Paper
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DASH -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="images/DASH.png" alt="DASH adversarial example comparison showing Original, Diffattack, AdvAD, and DASH (ours) results on iguana and cathedral images">
+      </div>
+      <div class="project-info">
+        <span class="project-tag dash">Adversarial ML · CVPR 2026</span>
+        <h3 class="project-name dash">DASH</h3>
+        <p class="project-subtitle">A Differentiable Meta-Attack Framework for Perceptually-Aligned Adversarial Examples</p>
+        <p class="project-abstract">
+          Norm-bounded adversarial examples (ℓp-constrained) often fail to align with human perception. DASH is a <strong>differentiable meta-attack framework</strong> that strategically composes existing ℓp-based attacks to generate effective and perceptually-aligned adversarial examples. Operating in a multi-stage fashion, DASH aggregates candidates from multiple base attacks using <strong>learned, adaptive weights</strong> and propagates the result forward. A novel meta-loss jointly minimizes misclassification loss and perceptual distortion, dynamically modulating each base attack's contribution. Evaluated on adversarially trained robust models across CIFAR-10/100 and ImageNet.
+        </p>
+        <div class="project-stats">
+          <span class="stat">+20.63% ASR vs AdvAD</span>
+          <span class="stat">SSIM +11</span>
+          <span class="stat">LPIPS +0.015</span>
+          <span class="stat">FID +5.7</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/habiburiit/AI_ATTCK" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://arxiv.org/pdf/2508.13309" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            arXiv
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- WINGS -->
+    <article class="project-card reverse">
+      <div class="project-image">
+        <img src="images/WINGS.png" alt="WINGS framework: sensitivity-aware PCA and SVR weight generation, compact storage, inference-time reconstruction, and tamper evidence under bit-flip attack">
+      </div>
+      <div class="project-info">
+        <span class="project-tag">Model Compression · IEEE TCOMP</span>
+        <h3 class="project-name">WINGS</h3>
+        <p class="project-subtitle">Automatic Weight Generator for Storage-Efficient Deep Learning Models</p>
+        <p class="project-abstract">
+          Storing millions of synaptic weights is the main barrier to running large models on edge hardware. WINGS removes that cost by generating weights at inference time instead of storing them. A gradient-based sensitivity analysis ranks layers; low-sensitivity layers are compressed with <strong>PCA</strong>, and lightweight <strong>support vector regression</strong> models predict each layer's reduced components from the previous layer, so only PCA bases, the first compressed layer, the SVR predictors, and the untouched high-sensitivity weights are kept. Nothing is retrained. The same structure yields tamper evidence for free: a bit-flip in a stored coefficient perturbs an entire weight row along a dominant principal direction, so the accuracy drop is amplified and the attack becomes observable at a fraction of the redundancy cost of ECC. Validated on CNNs and on transformer NLP models, with FPGA and 28nm ASIC measurements.
+        </p>
+        <div class="project-stats">
+          <span class="stat">53x compression, FC layers</span>
+          <span class="stat">14x AlexNet · 11x ResNet-50</span>
+          <span class="stat">&lt; 1% accuracy loss</span>
+          <span class="stat">No retraining</span>
+        </div>
+        <div class="project-links">
+          <a href="https://arxiv.org/pdf/2507.06380" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            arXiv
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section id="news" class="reveal">
+  <div class="container">
+    <h2 class="section-heading">Latest <em>news</em></h2>
+    <ul class="news-list">
+      <li class="news-item">
+        <div class="news-date">Oct 2026</div>
+        <div class="news-content"><span class="news-tag">Journal</span> <strong>WINGS</strong> accepted with no further changes in <strong>IEEE Transactions on Computers</strong>.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Sep 2026</div>
+        <div class="news-content"><span class="news-tag">Journal</span> <strong>MARVEL-PUF</strong> journal version accepted in <strong>IEEE Design &amp; Test</strong>.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Aug 2026</div>
+        <div class="news-content"><span class="news-tag">Paper</span> <strong>(A)iSpy: Parasitic Trojans for Machine Learning Infrastructure</strong> accepted at <strong>ACM CCS 2026</strong>.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">May 2026</div>
+        <div class="news-content"><span class="news-tag">Paper</span> Two papers accepted at <strong>CVPR 2026</strong> - DASH (meta-attack framework) and ENTROMIX (medical image augmentation).</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Apr 2026</div>
+        <div class="news-content"><span class="news-tag">Paper</span> E³-CODE accepted at <strong>DAC 2026</strong>, Long Beach, CA.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Mar 2026</div>
+        <div class="news-content"><span class="news-tag">Paper</span> Two papers accepted at <strong>ISQED 2026</strong>.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Jan 2026</div>
+        <div class="news-content"><span class="news-tag">Journal</span> SAMURAI published in <strong>IEEE Transactions on Circuits and Systems for AI</strong>.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Oct 2025</div>
+        <div class="news-content"><span class="news-tag">Award</span> Received the <strong>Best Demo Award</strong> at the Warren B. Nelms Annual IoT Conference for the SAMURAI tool demonstration.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Sep 2025</div>
+        <div class="news-content"><span class="news-tag">Award</span> Won <strong>First Prize</strong> for Research Forum Presentation at AIIOT 2025.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Aug 2025</div>
+        <div class="news-content"><span class="news-tag">Teaching</span> Selected as <strong>Instructor</strong> for EEE 6744 Hands-on Hardware Security at UF.</div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Nov 2024</div>
+        <div class="news-content"><span class="news-tag">Honor</span> Paper "SAMURAI" was a <strong>Best Paper Award nominee</strong> at IEEE Asian Test Symposium (ATS).</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section id="publications" class="reveal">
+  <div class="container">
+    <h2 class="section-heading">Selected <em>publications</em></h2>
+
+    <p style="color: var(--ink-light); font-size: 14px; margin-bottom: 32px;">
+      For a complete list, see <a href="https://scholar.google.com/citations?user=jU1-z9UAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+    </p>
+
+    <div class="pub-group">
+      <h3 class="pub-group-title">Conference Papers <span class="pub-count">Selected</span></h3>
+      <ul class="pub-list">
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">(A)iSpy: Parasitic Trojans for Machine Learning Infrastructure</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, <a href="https://fsuya.org/group/" target="_blank" rel="noopener">Q. Xu</a>, Z. Haider, P. Chakraborty, S. Bhunia, F. Suya</div>
+            <div class="pub-venue">ACM Conference on Computer and Communications Security (CCS)</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2607.17550" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">DASH: A Meta-Attack Framework for Synthesizing Effective and Stealthy Adversarial Examples</div>
+            <div class="pub-authors">A.A.N. Nafi, <strong>H. Rahaman</strong>, Z. Haider, T. Mahfuz, F. Suya, S. Bhunia, P. Chakraborty</div>
+            <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2508.13309" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">ENTROMIX: Clinically-Aware Self-Paced Generative Augmentation for Imbalanced Medical Image Classification</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong> et al.</div>
+            <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">E³-CODE: Embedded and Efficient Error-Correcting Code for Error-Resilient Neural Networks</div>
+            <div class="pub-authors">N. Kamineni, <strong>H. Rahaman</strong>, S. Bhunia, R. Ewetz</div>
+            <div class="pub-venue">63rd Design Automation Conference (DAC), Long Beach, CA</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">Evolving Landscape of Attacks on AI Hardware and Robust Defenses</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, S. Paria, A. Chatterjee, S. Bhunia</div>
+            <div class="pub-venue">27th International Symposium on Quality Electronic Design (ISQED)</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">CRISP: A Unified, Configurable, Resilient Infrastructure for Security Primitives</div>
+            <div class="pub-authors">A. Chatterjee, S. Paria, <strong>H. Rahaman</strong>, B. Chatterjee, S. Bhunia</div>
+            <div class="pub-venue">27th International Symposium on Quality Electronic Design (ISQED)</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2025</div>
+          <div class="pub-content">
+            <div class="pub-title">MARVEL-PUF: A Robust Multi-Bit Memory PUF for FPGA-based Embedded Systems Security</div>
+            <div class="pub-authors">A. Chatterjee, <strong>H. Rahaman</strong>, S. Bhunia</div>
+            <div class="pub-venue">International Conference on Codesign and System Synthesis (CODES+ISSS)</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1145/3742873.3755988" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2024</div>
+          <div class="pub-content">
+            <div class="pub-title">SAMURAI: A Framework for Safeguarding Against Malicious Usage and Resilience of AI <span class="pub-tag honor">Best Paper Nominee</span></div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, A. Chatterjee, S. Bhunia</div>
+            <div class="pub-venue">IEEE 33rd Asian Test Symposium (ATS)</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1109/ATS64447.2024.10915409" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2024</div>
+          <div class="pub-content">
+            <div class="pub-title">Secure AI Systems: Emerging Threats and Defense Mechanisms</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, A. Chatterjee, S. Bhunia</div>
+            <div class="pub-venue">IEEE 33rd Asian Test Symposium (ATS)</div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/10915428/" target="_blank" rel="noopener">IEEE</a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <h3 class="pub-group-title">Journal Articles <span class="pub-count">Published</span></h3>
+      <ul class="pub-list">
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">WINGS: Automatic Weight Generator for Storage-Efficient Deep Learning Models <span class="pub-tag review">Accepted</span></div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, A. Chatterjee, S. Bhunia</div>
+            <div class="pub-venue">IEEE Transactions on Computers</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2507.06380" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">SAMURAI: Runtime Attack Detection in AI Accelerators Using AI Performance Counters</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, A. Chatterjee, S. Bhunia</div>
+            <div class="pub-venue">IEEE Transactions on Circuits and Systems for Artificial Intelligence</div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11471824" target="_blank" rel="noopener">IEEE</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">Benchmarking of Secure Hardware: Logic Locking, State Space Transformation, Redaction, and NoC Routing Table Configuration <span class="pub-tag review">Accepted</span></div>
+            <div class="pub-authors">S. Paria, Z. Han, A. Dasgupta, <strong>H. Rahaman</strong>, D. Halder, R. Almawzan, D. Xing, K. Amberiadis, S. Ray, J. Rajendran, A. Srivastava, S. Bhunia</div>
+            <div class="pub-venue">ACM Transactions on Design Automation of Electronic Systems</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">MARVEL-PUF: A LUT-based Robust Multi-Bit Memory PUF Primitive for FPGA</div>
+            <div class="pub-authors">A. Chatterjee, <strong>H. Rahaman</strong>, S. Paria, S. Bhunia</div>
+            <div class="pub-venue">IEEE Design &amp; Test (journal version of the CODES+ISSS paper)</div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11718802" target="_blank" rel="noopener">IEEE</a>
+              <a href="https://doi.org/10.1109/MDAT.2026.3739159" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2025</div>
+          <div class="pub-content">
+            <div class="pub-title">ASTRA: Automated Insertion of Distributed Entropy Sources for Robust Authentication</div>
+            <div class="pub-authors">A. Chatterjee, <strong>H. Rahaman</strong>, S. Bhunia</div>
+            <div class="pub-venue">IEEE Transactions on Very Large Scale Integration (VLSI) Systems, 34(2): 634–647</div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11223067" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2025</div>
+          <div class="pub-content">
+            <div class="pub-title">Fortifying AI Systems: Emerging Threats and Security Countermeasures</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, A. Chatterjee, S. Bhunia</div>
+            <div class="pub-venue">SN Computer Science, vol. 7, no. 227</div>
+            <div class="pub-links">
+              <a href="https://link.springer.com/article/10.1007/s42979-025-04658-y" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <h3 class="pub-group-title">Journal Articles <span class="pub-count">Under Review</span></h3>
+      <ul class="pub-list">
+
+        <li class="pub">
+          <div class="pub-year">2025</div>
+          <div class="pub-content">
+            <div class="pub-title">BARE-AI: Bit-Flip Attack Resilience in AI Hardware through Built-in Performance Monitors <span class="pub-tag review">Submitted</span></div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, S. Bhattacharya, S. Das, K. Basu, S. Bhunia</div>
+            <div class="pub-venue">IEEE Transactions on Very Large Scale Integration (VLSI) Systems</div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <h3 class="pub-group-title">Earlier Work <span class="pub-count">Masters - IIT Kharagpur</span></h3>
+      <ul class="pub-list">
+
+        <li class="pub">
+          <div class="pub-year">2024</div>
+          <div class="pub-content">
+            <div class="pub-title">Structural Testing in MEDA Based Biochips: A New Technique Using Diagonal Route</div>
+            <div class="pub-venue">IEEE Computer Society Annual Symposium on VLSI (ISVLSI)</div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/document/10682762" target="_blank" rel="noopener">IEEE</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2022</div>
+          <div class="pub-content">
+            <div class="pub-title">Easily-Verifiable Design of Non-Scan Sequential Machines for Conformance Checking</div>
+            <div class="pub-venue">IEEE Conference Publication</div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/document/9885877" target="_blank" rel="noopener">IEEE</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2022</div>
+          <div class="pub-content">
+            <div class="pub-title">Transfer Fault Detection in Finite State Machines Using Deep Neural Networks</div>
+            <div class="pub-venue">In Artificial Intelligence Driven Circuits and Systems: Proc. ISED 2021, Springer LNEE</div>
+            <div class="pub-links">
+              <a href="https://link.springer.com/chapter/10.1007/978-981-16-6940-8_12" target="_blank" rel="noopener">Springer</a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <h3 class="pub-group-title">Patents <span class="pub-count">USPTO</span></h3>
+      <ul class="pub-list">
+
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-content">
+            <div class="pub-title">Pre-Computation-Based Implementation of Neural Networks</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, S. Bhunia, B. Chatterjee, A. Chatterjee</div>
+            <div class="pub-venue">US Patent Application US20260093966A1 (Apr 2026)</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">2025</div>
+          <div class="pub-content">
+            <div class="pub-title">Reconfigurable Security Fabric for Securing Digital Circuit Designs</div>
+            <div class="pub-authors"><strong>H. Rahaman</strong>, S. Bhunia, A. Dasgupta, A. Chatterjee, S. Paria</div>
+            <div class="pub-venue">US Patent Application US20250384197A1 (Dec 2025)</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">-</div>
+          <div class="pub-content">
+            <div class="pub-title">MBM-PUF: A Multi-Bit Memory-based Physically Unclonable Function</div>
+            <div class="pub-venue">Patent Pending</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-year">-</div>
+          <div class="pub-content">
+            <div class="pub-title">HAL: Hardware-Based Licensing of AI Chips</div>
+            <div class="pub-venue">Patent Pending</div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="reveal">
+  <div class="container">
+    <h2 class="section-heading"><em>Education</em> & experience</h2>
+    <div class="timeline-grid">
+      <div class="timeline-col">
+        <h3>Education</h3>
+
+        <div class="timeline-item">
+          <img class="timeline-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FA4616'/%3E%3Ctext x='50' y='62' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EUF%3C/text%3E%3C/svg%3E" alt="UF">
+          <div>
+            <div class="timeline-date">Aug 2022 - Present</div>
+            <div class="timeline-role">Ph.D., Electrical & Computer Engineering</div>
+            <div class="timeline-place">University of Florida, Gainesville, FL</div>
+            <div class="timeline-detail">GPA 3.89 / 4.00 · Advisor: Prof. Swarup Bhunia</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <img class="timeline-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23003366'/%3E%3Ctext x='50' y='44' font-family='Georgia,serif' font-size='22' font-weight='700' fill='white' text-anchor='middle'%3EIIT%3C/text%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='14' font-weight='600' fill='white' text-anchor='middle'%3EKGP%3C/text%3E%3C/svg%3E" alt="IIT Kharagpur">
+          <div>
+            <div class="timeline-date">Jul 2019 - Jan 2022</div>
+            <div class="timeline-role">Masters in Computer Science & Engineering</div>
+            <div class="timeline-place">Indian Institute of Technology Kharagpur, India</div>
+            <div class="timeline-detail">
+              GPA 3.78 / 4.00 · Advisors: <a href="https://facweb.iitkgp.ac.in/~isg/" target="_blank" rel="noopener">Prof. Indranil Sengupta</a> (CSE) and Prof. Santanu Chattopadhyay (ECE)
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item no-logo">
+          <div>
+            <div class="timeline-date">Jul 2015 - May 2019</div>
+            <div class="timeline-role">B.Tech., Computer Science & Engineering</div>
+            <div class="timeline-place">RCC Institute of Information Technology, Kolkata, India</div>
+            <div class="timeline-detail">GPA 3.42 / 4.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-col">
+        <h3>Professional Experience</h3>
+
+        <div class="timeline-item">
+          <img class="timeline-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FA4616'/%3E%3Ctext x='50' y='62' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EUF%3C/text%3E%3C/svg%3E" alt="UF">
+          <div>
+            <div class="timeline-date">Aug 2022 - Present</div>
+            <div class="timeline-role">Graduate Research Assistant</div>
+            <div class="timeline-place">University of Florida - ECE Department</div>
+            <div class="timeline-detail">ML security research; runtime attack detection in AI accelerators using AI Performance Counters.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <img class="timeline-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230071C5'/%3E%3Ctext x='50' y='62' font-family='Arial,sans-serif' font-size='22' font-weight='700' fill='white' text-anchor='middle'%3Eintel%3C/text%3E%3C/svg%3E" alt="Intel">
+          <div>
+            <div class="timeline-date">Aug 2023 - Dec 2023</div>
+            <div class="timeline-role">SoC Security Research Intern</div>
+            <div class="timeline-place">Intel Corporation, Santa Clara, CA, USA</div>
+            <div class="timeline-detail">Developed and validated countermeasures for Intel's Structured eASIC technology.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <img class="timeline-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230071C5'/%3E%3Ctext x='50' y='62' font-family='Arial,sans-serif' font-size='22' font-weight='700' fill='white' text-anchor='middle'%3Eintel%3C/text%3E%3C/svg%3E" alt="Intel">
+          <div>
+            <div class="timeline-date">Jul 2021 - Dec 2022</div>
+            <div class="timeline-role">DFT Research Intern, HPG DFT Group</div>
+            <div class="timeline-place">Intel Corporation, Bangalore, India</div>
+            <div class="timeline-detail">Built ML model for predicting and fixing Verilog compile-time errors.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item no-logo">
+          <div>
+            <div class="timeline-date">Jan 2022 - Jun 2022</div>
+            <div class="timeline-role">Research Intern</div>
+            <div class="timeline-place">IIT BHU (Varanasi), India</div>
+            <div class="timeline-detail">IoT-enabled wireless sensor networks for emergency evacuation systems.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEACHING ============ -->
+<section id="teaching" class="reveal">
+  <div class="container">
+    <h2 class="section-heading"><em>Teaching</em> & mentorship</h2>
+    <div class="two-col">
+
+      <div>
+        <h3 class="subsection-title">Instructor</h3>
+        <div class="list-item">
+          <span class="list-marker">Fall 2025</span>
+          <div class="list-text">
+            <strong>Hands-on Hardware Security (EEE 6744, 3 cr.)</strong>
+            <span class="sub">Graduate course · University of Florida · <a href="https://cadforassurance.org/trust-curriculum/haha-board/" target="_blank" rel="noopener">HaHa board curriculum</a></span>
+            <span class="sub-italic">Practical hardware security course built around the custom HaHa (Hardware Hacking) board, where students perform experiments on reverse-engineering, side-channel, fault-injection, and Trojan attacks, then implement countermeasures.</span>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Teaching Assistant</h3>
+        <div class="list-item">
+          <span class="list-marker">Fall 2024</span>
+          <div class="list-text">
+            <strong>Hands-on Hardware Security (EEE 6744)</strong>
+            <span class="sub">Graduate course · UF</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="list-marker">Spring 2024</span>
+          <div class="list-text">
+            <strong>VLSI Circuits and Technology 2</strong>
+            <span class="sub">Graduate course · UF</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="list-marker">Fall 2023</span>
+          <div class="list-text">
+            <strong>Adventures in ECE Design</strong>
+            <span class="sub">Special Topics in Freshman Engineering · UF</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="list-marker">2020 – 2022</span>
+          <div class="list-text">
+            <strong>Compiler Design, Operating Systems, Digital Circuits</strong>
+            <span class="sub">NPTEL India</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="subsection-title">Mentorship</h3>
+        <div class="list-item">
+          <span class="list-marker">Summer 2024</span>
+          <div class="list-text">
+            <strong>Undergraduate Research Mentor</strong>
+            <span class="sub">University of Florida</span>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Awards & Honors</h3>
+        <div class="list-item">
+          <span class="list-marker">2025</span>
+          <div class="list-text">
+            <strong>Best Demo Award</strong> - UF Innovate, Warren B. Nelms Annual IoT Conference
+            <span class="sub">For the <a href="https://github.com/habiburiit/SAMURAI_Defense" target="_blank" rel="noopener">SAMURAI tool</a> demonstration</span>
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="list-marker">2025</span>
+          <div class="list-text">
+            <strong>First Prize</strong> - Research Forum Presentation, AIIOT 2025
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="list-marker">2024</span>
+          <div class="list-text">
+            <strong>Best Paper Nominee</strong> - IEEE Asian Test Symposium (ATS)
+            <span class="sub">For the SAMURAI framework paper</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE ============ -->
+<section id="service" class="reveal">
+  <div class="container">
+    <h2 class="section-heading">Professional <em>service</em></h2>
+    <div>
+      <h3 class="subsection-title">Reviewer</h3>
+      <div class="list-item">
+        <span class="list-marker">2025</span>
+        <div class="list-text">International Symposium on Devices, Circuits and Systems (ISDCS)</div>
+      </div>
+      <div class="list-item">
+        <span class="list-marker">2025</span>
+        <div class="list-text">Conference on Secure IoT, Assured and Trusted Computing</div>
+      </div>
+      <div class="list-item">
+        <span class="list-marker">2025</span>
+        <div class="list-text">IEEE Custom Integrated Circuits Conference (CICC)</div>
+      </div>
+      <div class="list-item">
+        <span class="list-marker">2024</span>
+        <div class="list-text">VLSI Design Conference</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="reveal">
+  <div class="container">
+    <h2 class="section-heading">Get in <em>touch</em></h2>
+    <div class="contact-grid">
+      <div class="contact-text">
+        <p>Happy to discuss research, collaborations, or anything related to ML security and AI hardware. The fastest way to reach me is by email.</p>
+        <p>I'm based in Gainesville, Florida - open to in-person meetings on the UF campus or virtual calls.</p>
+      </div>
+      <ul class="contact-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:rahaman.habibur@ufl.edu">rahaman.habibur@ufl.edu</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:habibur.hr4@gmail.com">habibur.hr4@gmail.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+13527097450">+1 (352) 709-7450</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Gainesville, FL · USA</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
+          <a href="https://faculty.eng.ufl.edu/swarup/people/" target="_blank" rel="noopener">Bhunia Lab - UF Faculty Page</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="https://iot.institute.ufl.edu/iot-students-club/officers/habibur-rahaman/" target="_blank" rel="noopener">UF IoT Institute Profile</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Habibur Rahaman</span>
+    <span>Last updated: October 2026</span>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+});
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const scrollProgress = document.getElementById('scrollProgress');
+const mainNav = document.getElementById('mainNav');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.width = ((scrollTop / docHeight) * 100) + '%';
+
+  if (scrollTop > 20) mainNav.classList.add('scrolled');
+  else mainNav.classList.remove('scrolled');
+
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (window.pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
